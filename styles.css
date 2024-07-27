@@ -433,6 +433,13 @@ footer .socials a{
     .social-btn {
         margin: 0 10px; /* Adjust the value as needed */
     }
+    .view-resume {
+        font-size: 24px;
+        font-weight: bold;
+        display: block;
+        margin-top: 20px;
+        color: white;
+    }
     
     
     
