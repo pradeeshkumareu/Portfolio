@@ -417,7 +417,7 @@ footer .socials a{
         display: flex;
         justify-content: center;
         gap: 20px;
-        padding: 10px; /* Optional: Add padding around the icons */
+        padding: 10px; 
     }
     
     .social-icon {
