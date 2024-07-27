@@ -440,6 +440,12 @@ footer .socials a{
         margin-top: 20px;
         color: white;
     }
+    .footer-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
     
     
     
