@@ -14,7 +14,18 @@
     <meta name="msapplication-TileColor" content="#da532c">
     <meta name="theme-color" content="#ffffff">
     <title>Portfolio</title>
+    <style>
+        .glow {
+        animation: glow-animation 2s;
+    }
 
+    @keyframes glow-animation {
+        0% { box-shadow: 0 0 10px rgba(0, 255, 0, 0.5); }
+        50% { box-shadow: 0 0 20px rgba(0, 255, 0, 0.7); }
+        100% { box-shadow: 0 0 10px rgba(0, 255, 0, 0.5); }
+    }
+       
+    </style>
 </head>
 
 <body>
@@ -24,9 +35,8 @@
         </div>
         <div class="links">
             <a href="#" class="active">About</a>
-            <a href="#">Portfolio</a>
+            <a href="#" onclick="scrollToProjects()">Portfolio</a>
             <a href="#" onclick="scrollToContact()">Contact Me</a>
-
         </div>
     </nav>
 
@@ -35,7 +45,7 @@
             <h3>Software Developer</h3>
             <div class="info">
                 <h2>I'm Pradeesh Kumar</h2>
-                <p>I craft innovative and dynamic applications, turning complex problems into elegant,</br>
+                <p>I craft innovative and dynamic applications, turning complex problems into elegant,<br>
                  user-friendly solutions!</p>
                 <div class="buttons">
                     <button class="hire" onclick="sendEmail()">
@@ -53,26 +63,24 @@
         </div>
     </div>
 
-    <div class="works">
+    <div class="works" id="projects">
         <div class="left">
             <h3 ><i class="fas fa-circle"></i> PROJECTS</h3>
             <div class="works-list">
                 <div class="item">
                     <div class="work-info">
-                        <h5 class="active" >Project 1: Object Detection</h5>
+                        <h5 class="active"><a href="https://github.com/pradeeshkumareu/Object-detection--ID-Card.git">Project 1: Object Detection</a></h5>
                         <p>• The system uses a YOLO model to detect ID cards and measure their distance from the camera in real-time.</p>
                         <p>• Visual Indicators: It provides visual feedback by marking detected ID cards with bounding boxes, confidence scores, and distance information.</p>
                     </div>
-                    <p class="tech"></p>
                 </div>
                 
                 <div class="item">
                     <div class="work-info">
-                        <h5 class="active">Project 2: Portfolio</h5>
+                        <h5 class="active" ><a href="https://github.com/pradeeshkumareu/Portfolio.git">Project 2: Portfolio</a></h5>
                         <p>• A Portfolio website highlights my skills and completed projects to potential employers or clients.</p>
                         <p>• It serves as a central, professional platform to showcase my work and connect with people.</p>
                     </div>
-                   
                 </div>
             </div>
         </div>
@@ -84,16 +92,16 @@
             </div>
             <div class="item">
                 <a href="https://drive.google.com/drive/folders/1HNZqtiEgR8DtJ0a8pmUUlZHKELtlMo22?usp=drive_link">Certificates</a>
-                <p>•Programming in Java - NPTEL
-                   •Introduction to IoT - NPTEL</br>
-                   •EF Standard English Test - EF SET(66%)</br>
+                <p>•Programming in Java - NPTEL<br>
+                   •Introduction to IoT - NPTEL<br>
+                   •EF Standard English Test - EF SET(66%)<br>
                    •Crash course on Python - Coursers</p>
             </div>
             <div class="item">
                 <a href="https://drive.google.com/drive/folders/11rfNRf6aEnDsb_uAH7IPC_L0v_-Gejvl?usp=drive_link">Workshops</a>
-                <p>•“Block Chain and Technology” conducted by NIT, Trichy</br>
-                    •“Java Programming” workshop conducted by LIVEWIRE,Salem.</br>
-                    </p>
+                <p>•“Block Chain and Technology” conducted by NIT, Trichy<br>
+                    •“Java Programming” workshop conducted by LIVEWIRE,Salem.<br>
+                </p>
             </div>
             <div class="item">
                 <a href="https://drive.google.com/drive/folders/125PQ4kO63GexFlVF-6zSdNWJmzDi5gRd?usp=drive_link">Achievements</a>
@@ -104,11 +112,10 @@
                 <p>Java, HTML and CSS, JavaScript, Bootstrap, Github, Python</p>
             </div>
         </div>
-
     </div>
 
     <footer id="contact" class="bg-dark text-center text-white">
-        <div class="container p-4 pb-0">
+        <div class="container p-4 pb-0" id="social-media">
             <section class="mb-4">
                 <a class="btn btn-outline-light btn-floating social-btn" href="https://www.instagram.com/prathy_finnton?igsh=MThuYWJja3p1dndmYw==" role="button">
                     <i class="fab fa-instagram fa-2x"></i>
@@ -119,15 +126,12 @@
                 <a class="btn btn-outline-light btn-floating social-btn" href="https://github.com/pradeeshkumareu" role="button">
                     <i class="fab fa-github fa-2x"></i>
                 </a>
-                
-                
             </section>
-           
         </div>
-        <div class="right"><a  class="online"   href="https://drive.google.com/file/d/1crZ3as6G50vscN6biQN5llMabN0iaPp6/view?usp=drive_link"><i class="fas fa-circle"></i> View Resume</a></div>
+        <div class="right">
+            <a class="online" href="https://drive.google.com/file/d/1crZ3as6G50vscN6biQN5llMabN0iaPp6/view?usp=drive_link"><i class="fas fa-circle"></i> View Resume</a>
+        </div>
     </footer>
-    
-    
 
     <script>
         function sendEmail() {
@@ -143,8 +147,33 @@
                 alert("Email copied to clipboard!");
             })
         }
+
+        function scrollToProjects() {
+            var projectsSection = document.getElementById('projects');
+            projectsSection.scrollIntoView({ behavior: 'smooth' });
+            
+            // Add the glowing effect
+            projectsSection.classList.add('glow');
+            
+            // Remove the glowing effect after 2 seconds
+            setTimeout(function() {
+                projectsSection.classList.remove('glow');
+            }, 2000);
+        }
+
         function scrollToContact() {
-        document.getElementById('contact').scrollIntoView({ behavior: 'smooth' });
-    }
+            var contactSection = document.getElementById('social-media');
+            contactSection.scrollIntoView({ behavior: 'smooth' });
+            
+            // Add the glowing effect
+            contactSection.classList.add('glow');
+            
+            // Remove the glowing effect after 2 seconds
+            setTimeout(function() {
+                contactSection.classList.remove('glow');
+            }, 2000);
+        }
     </script>
-    
+</body>
+
+</html>
