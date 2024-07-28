@@ -1,4 +1,7 @@
 # Pradeesh Kumar E U - Portfolio Website
+![portfolioscreenshot 1](https://github.com/user-attachments/assets/b1f42a29-fa1e-4354-8496-634b6cd154a3)
+![portfolio screenshot 2](https://github.com/user-attachments/assets/5a4c561f-9259-4e7f-a4b6-4d542c579eaf)
+
 Overview :
 This is a personal portfolio website for Pradeesh Kumar E U, showcasing professional skills, projects, and contact information. The website is designed to present a clean, modern interface with a focus on usability and responsiveness. It highlights key projects, skills, and provides a way for potential clients or employers to get in touch.
 
